@@ -28,28 +28,26 @@ const squadre = [
         nome: "roma",
         punti_fatti: 0,
         falli_subiti: 0
-    },
+    }
 ]
 
 console.log(squadre);
 
 squadre.forEach((item) => {
-    // const {punti_fatti, falli_subiti} = item; perchè non funge???
     item.punti_fatti = randomize();
     item.falli_subiti = randomize();
 });
 
 console.log(squadre);
 
-const array = [];
-
-squadre.forEach((item) => {
-    const {nome, falli_subiti} = item;
-    array.push(nome);
-    array.push(falli_subiti);
+const arrayResult = squadre.map((element) =>{
+    const {nome, falli_subiti} = element;
+    return  {nome,
+            falli_subiti
+        };
 });
 
-console.log(array);
+console.log(arrayResult);
 
 // FUNCTION
 
